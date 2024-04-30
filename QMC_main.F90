@@ -37,20 +37,14 @@
       OPEN(10, FILE = 'QMC_input', STATUS = 'old')
 
       READ(10,*)
-      READ(10,*)
-      READ(10,*)
       READ(10,*) method        ! var/dif 
       READ(10,*) geom_file     ! Geometry file .xyz
       READ(10,*) n_el          ! Number of electrons
       READ(10,*) a             ! Jastrow factor
       READ(10,*)
-      READ(10,*)
-      READ(10,*)
       READ(10,*) dt            ! Time step 
       READ(10,*) nmax          ! Number of steps
       READ(10,*) nruns         ! Number of walkers
-      READ(10,*)
-      READ(10,*)
       READ(10,*)
       READ(10,*) E_ref         ! Reference Energy
       READ(10,*) tau           ! Projection time
