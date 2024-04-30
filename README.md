@@ -12,7 +12,9 @@ this folder.
 ## Repository Contents
 
 - `License`: GNU General Public License.
-- `Makefile`: For compiling the source code and generating the executable.
+- `Documentation.pdf`: Provides a concise overview of the Monte Carlo methods used,
+                       including Variational and Pure Diffusion Monte Carlo, detailing
+                       wavefunction definitions and system energy calculations.
 - `QMC_main.F90`: Implements Variational and Pure Diffusion Monte Carlo methods.
 - `QMC_energy.F90`: Calculates total energy as the sum of potential and kinetic
                     energies, and manages wavefunction computations and its first
@@ -22,6 +24,8 @@ this folder.
                        results display.
 - `QMC_input`: Input file for configuring the computations.
 - `file.xyz`: Coordinates file for the atoms in the simulated chemical system.
+  - `Makefile`: For compiling the source code and generating the executable.
+
 
 ## Prerequisites
 
@@ -51,6 +55,6 @@ To compile and execute the Quantum Monte Carlo simulations, follow these simple 
    ```bash
    ./QMC_run
    ```
-   Ensure that the `QMC_input` file is properly configured with the necessary parameters
-   before running the simulation. This streamlined process facilitates a quick setup and
-   execution of your QMC simulations.
+Ensure that the `QMC_input` file is properly configured with the necessary parameters
+before running the simulation. This streamlined process facilitates a quick setup and
+execution of your QMC simulations.
