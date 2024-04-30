@@ -37,7 +37,12 @@ sudo apt-get install gfortran
 
 ## Compilation and Execution
 
-To compile and execute the Quantum Monte Carlo simulations, follow these simple steps:
+Before you can compile and execute the Quantum Monte Carlo simulations, ensure that 
+you have downloaded the project folder to your local machine. You can download the 
+entire repository by clicking on this link:
+Follow these steps to 
+compile and run the simulations:
+
 1. **Navigate to the Project Directory:**
    Open your terminal and change to the directory containing the project files.
    ```bash
