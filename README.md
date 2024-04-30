@@ -36,25 +36,30 @@ sudo apt-get install gfortran
 ```
 
 ## Compilation and Execution
+Before you can compile and execute the Quantum Monte Carlo simulations, ensure that you 
+have downloaded the project folder to your local machine. You can download the entire 
+repository as a ZIP file by clicking [here](https://github.com/TommasoBag99/QMC/archive/refs/heads/main.zip).
 
-Before you can compile and execute the Quantum Monte Carlo simulations, ensure that 
-you have downloaded the project folder to your local machine. You can download the 
-entire repository by clicking [here](https://github.com/TommasoBag99/QMC.git).
-Follow these steps to compile and run the simulations:
+Once the folder is downloaded, follow these steps to compile and run the simulations:
 
 1. **Navigate to the Project Directory:**
+   
    Open your terminal and change to the directory containing the project files.
    ```bash
    cd path/to/your/project
    ```   
+
 2. **Compile the Code:**
+   
    Execute the `make` command to compile the source files using the provided `Makefile`.
    This will automatically compile the files `QMC_main.F90`, `QMC_energy.F90`, and
    `QMC_utilities.F90` with gfortran to generate the executable `QMC_run`.
    ```bash
    make
-   ```   
+   ```
+      
 3. **Run the Simulation:**
+   
    Start the simulation by running the generated executable:
    ```bash
    ./QMC_run
