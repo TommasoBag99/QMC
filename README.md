@@ -112,3 +112,49 @@ H -0.049222 0.000000 -0.085255
 H -0.049222 0.000000  0.785255 
 H  0.704662 0.000000  0.350000
 ```
+
+## Output Description
+
+The output of the simulation is displayed directly in the command prompt as a simple table. 
+Below is a breakdown of the information you will receive:
+
+### System Coordinates
+
+This table displays the coordinates of the atoms in the system under simulation, listing each 
+atom type along with its respective x, y, and z coordinates.
+```bash
++--------+-----------------------------------+
+| SYSTEM |      X          Y          Z      |
++--------+-----------------------------------+
+|   H    | -0.0930161  0.0000000 -0.1611086  |
+|   H    | -0.0930161  0.0000000  1.4839168  |
+|   H    |  1.3316181  0.0000000  0.6614041  |
++--------+-----------------------------------+
+```
+
+### Charge
+
+Displays the total charge of the system.
+```bash
++--------------------------------------------+
+| CHARGE =  1                                |
++--------------------------------------------+
+```
+
+### Quantum Monte Carlo Results
+
+This section summarizes the results of the Quantum Monte Carlo simulation, including the reference 
+energy, the calculated Quantum Monte Carlo energy with its standard error, and the acceptance rate 
+with its standard error.
+```bash
++--------------------------------------------+
+|     PURE DIFFUSION QUANTUM MONTE CARLO     |
++--------------------------------------------+
+| ENERGY REF = -1.342000                     |
+| ENERGY QMC = -1.342193 +/- 0.002652        |
+| ACCEPT QMC =  0.967137 +/- 0.000136        |
++--------------------------------------------+
+```
+
+These tables provide a concise summary of the simulation results, useful for quick analysis and 
+verification of the Quantum Monte Carlo calculations.
