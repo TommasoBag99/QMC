@@ -36,6 +36,7 @@ sudo apt-get install gfortran
 ```
 
 ## Compilation and Execution
+
 Before you can compile and execute the Quantum Monte Carlo simulations, ensure that you 
 have downloaded the project folder to your local machine. You can download the entire 
 repository as a ZIP file by clicking 
@@ -68,3 +69,46 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
    ```bash
    ./QMC_run
    ```
+
+## Input Files Description
+
+The simulation uses two main input files to configure and execute the Quantum Monte Carlo 
+calculations:
+
+### `QMC_input`
+
+This file contains the parameters needed to set up and control the simulation method and 
+environment. It specifies the Monte Carlo method (variational or diffusion), the system 
+geometry (`file.xyz`), the number of electrons, and various simulation parameters such as
+the Jastrow factor, time step, number of steps, number of walkers, reference energy, and 
+projection time (the last two are specific to the Pure Diffusion method).
+
+**Example of `QMC_input`:**
+```bash
+dif       ! Method var/dif     
+h3.xyz    ! Geometry file        
+2         ! Number of electrons  
+1.2       ! Jastrow factor (a)
+
+0.05      ! Time step            
+100000    ! Number of steps
+50        ! Number of walkers
+
+-1.342    ! reference energy !! ONLY FOR PURE DIFFUSION
+100       ! projection time  !! ONLY FOR PURE DIFFUSION
+```
+
+### `file.xyz`
+
+This file defines the positions of the atoms in the chemical system being simulated, with
+each coordinate given in Angstroms. Each line after the first specifies an atom type followed
+by its x, y, and z coordinates in space.
+
+**Example of `file.xyz`:**
+```bash
+3 # number of atoms
+
+H -0.049222 0.000000 -0.085255 
+H -0.049222 0.000000  0.785255 
+H  0.704662 0.000000  0.350000
+```
