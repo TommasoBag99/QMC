@@ -48,7 +48,7 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
    
    Open your terminal and change to the directory containing the project files.
    ```bash
-   cd path/to/your/project/QMC
+   cd path/to/your/project/QMC-project
    ```   
 
 2. **Compile the Code:**
