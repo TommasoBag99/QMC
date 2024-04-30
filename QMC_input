@@ -1,12 +1,12 @@
 dif       ! Method var/dif     
-h.xyz     ! Geometry file        
-1         ! Number of electrons  
+h3.xyz    ! Geometry file        
+2         ! Number of electrons  
 1.2       ! Jastrow factor (a)
 
 0.1       ! Time step            
 100000    ! Number of steps
 30        ! Number of walkers
 
--0.5      ! reference energy !! ONLY FOR PURE DIFFUSION
+-1.342    ! reference energy !! ONLY FOR PURE DIFFUSION
 100       ! projection time  !! ONLY FOR PURE DIFFUSION
 
