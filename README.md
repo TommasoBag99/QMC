@@ -38,7 +38,8 @@ sudo apt-get install gfortran
 ## Compilation and Execution
 Before you can compile and execute the Quantum Monte Carlo simulations, ensure that you 
 have downloaded the project folder to your local machine. You can download the entire 
-repository as a ZIP file by clicking [here](https://github.com/TommasoBag99/QMC/archive/refs/heads/main.zip).
+repository as a ZIP file by clicking 
+[here](https://github.com/TommasoBag99/QMC/archive/refs/heads/main.zip).
 
 Once the folder is downloaded, follow these steps to compile and run the simulations:
 
@@ -46,7 +47,7 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
    
    Open your terminal and change to the directory containing the project files.
    ```bash
-   cd path/to/your/project
+   cd path/to/your/project/QMC
    ```   
 
 2. **Compile the Code:**
@@ -64,6 +65,6 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
    ```bash
    ./QMC_run
    ```
-Ensure that the `QMC_input` file is properly configured with the necessary parameters
-before running the simulation. This streamlined process facilitates a quick setup and
+Ensure the `QMC_input` file is correctly set up with all required parameters before 
+starting the simulation. This efficient setup process allows for a swift and smooth 
 execution of your QMC simulations.
