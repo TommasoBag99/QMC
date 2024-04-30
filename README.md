@@ -60,11 +60,11 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
    ```
       
 3. **Run the Simulation:**
+
+   Ensure that the input files `QMC_input` and `file.xyz` are correctly configured with all
+   necessary parameters before starting the simulation.
    
    Start the simulation by running the generated executable:
    ```bash
    ./QMC_run
    ```
-Ensure the `QMC_input` file is correctly set up with all required parameters before 
-starting the simulation. This efficient setup process allows for a swift and smooth 
-execution of your QMC simulations.
