@@ -23,6 +23,7 @@ The software compilation requires the `gfortran` compiler. Install it on
 Debian-based systems with the following command:
 ```bash
 sudo apt-get install gfortran
+```
 
 ## Compilation and Execution
 
@@ -32,3 +33,27 @@ To compile and execute the Quantum Monte Carlo simulations, follow these simple 
    Open your terminal and change to the directory containing the project files.
    ```bash
    cd path/to/your/project
+   ```
+   1. **Navigate to the Project Directory:**
+   Open your terminal and change to the directory containing the project files.
+   ```bash
+   cd path/to/your/project
+   ```
+
+   2. **Compile the Code:**
+   Execute the `make` command to compile the source files using the provided `Makefile`.
+   This will automatically compile the files `QMC_main.F90`, `QMC_energy.F90`, and
+   `QMC_utilities.F90` with gfortran to generate the executable `QMC_run`.
+   ```bash
+   make
+   ```
+   
+   3. **Run the Simulation:**
+   Start the simulation by running the generated executable:
+   ```bash
+   ./QMC_run
+   ```
+
+   Ensure that the `QMC_input` file is properly configured with the necessary parameters
+   before running the simulation. This streamlined process facilitates a quick setup and
+   execution of your QMC simulations.
