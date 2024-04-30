@@ -75,7 +75,7 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
 The simulation uses two main input files to configure and execute the Quantum Monte Carlo 
 calculations:
 
-### `QMC_input`
+### QMC_input
 
 This file contains the parameters needed to set up and control the simulation method and 
 environment. It specifies the Monte Carlo method (variational or diffusion), the system 
@@ -98,7 +98,7 @@ h3.xyz    ! Geometry file
 100       ! Projection time  !! ONLY FOR PURE DIFFUSION
 ```
 
-### `file.xyz`
+### file.xyz
 
 This file defines the positions of the atoms in the chemical system being simulated, with
 each coordinate given in Angstroms. Each line after the first specifies an atom type followed
