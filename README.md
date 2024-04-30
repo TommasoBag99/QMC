@@ -1,7 +1,13 @@
 # QMC
 
 This repository contains the Fortran 90 source code for performing Quantum
-Monte Carlo (QMC) simulations to calculate the energies of chemical systems.
+Monte Carlo (QMC) simulations to calculate the energies of chemical systems,
+primarily composed of hydrogen and helium. 
+
+The code supports both Variational Monte Carlo (VMC) and Pure Diffusion Monte
+Carlo (PDMC) techniques. For comprehensive details on these algorithms and 
+additional information, please refer to the `Documentation.pdf` file located in 
+this folder.
 
 ## Repository Contents
 
