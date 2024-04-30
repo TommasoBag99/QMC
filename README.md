@@ -24,7 +24,7 @@ this folder.
                        results display.
 - `QMC_input`: Input file for configuring the computations.
 - `file.xyz`: Coordinates file for the atoms in the simulated chemical system.
-  - `Makefile`: For compiling the source code and generating the executable.
+- `Makefile`: For compiling the source code and generating the executable.
 
 
 ## Prerequisites
