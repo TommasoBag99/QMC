@@ -117,8 +117,8 @@ H  0.704662 0.000000  0.350000
 
 ## Output Description
 
-The output of the simulation is displayed directly in the command prompt as a simple table. 
-Below is a breakdown of the information you will receive:
+The output of the simulation includes both on-screen displays and file outputs to facilitate 
+detailed analysis and visualization of the results.
 
 ### System Coordinates
 
@@ -160,3 +160,12 @@ with its standard error.
 
 These tables provide a concise summary of the simulation results, useful for quick analysis and 
 verification of the Quantum Monte Carlo calculations.
+
+### Output File
+
+The simulation generates an output file named energy_[name_sys].out, which contains the step 
+number and the corresponding Quantum Monte Carlo energy calculated at each step. Here is an 
+example of what the content might look like:
+```bash
+bla bla
+```
