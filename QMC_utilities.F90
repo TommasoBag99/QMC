@@ -137,7 +137,7 @@
 
       OPEN (30, FILE = "energy_"//trim(name_sys)//".out")
 
-      WRITE(30,1000) '# i', 'energy'
+      WRITE(30,1000) '#  i', 'energy'
       DO i = 1, nruns
          WRITE(30,2000) i, X(i)
       END DO
