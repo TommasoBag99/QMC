@@ -167,5 +167,13 @@ The simulation generates an output file named energy_[name_sys].out, which conta
 number and the corresponding Quantum Monte Carlo energy calculated at each step. Here is an 
 example of what the content might look like:
 ```bash
-bla bla
+#  i  energy
+   1 -1.342820
+   2 -1.328585
+   3 -1.364352
+   .
+   .
+ 198 -1.342110
+ 199 -1.350358
+ 200 -1.332718
 ```
