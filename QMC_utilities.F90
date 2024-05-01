@@ -137,12 +137,14 @@
 
       OPEN (30, FILE = "energy_"//trim(name_sys)//".out")
 
+      WRITE(30,1000) '# i', 'energy'
       DO i = 1, nruns
-         WRITE(30,1000) i, X(i)
+         WRITE(30,2000) i, X(i)
       END DO
 
       CLOSE (30)
 
-1000  FORMAT(I4,1X,F9.6)
+1000  FORMAT(A,2X,A)
+2000  FORMAT(I4,1X,F9.6)
 
       END SUBROUTINE data_out
