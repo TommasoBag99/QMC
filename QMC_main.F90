@@ -13,6 +13,7 @@
 
       IMPLICIT NONE
 
+      CHARACTER*4                   :: name_sys
       CHARACTER*3                   :: method
       CHARACTER*8                   :: geom_file
       CHARACTER*2, ALLOCATABLE      :: atom(:)
@@ -36,6 +37,7 @@
 
       OPEN(10, FILE = 'QMC_input', STATUS = 'old')
 
+      READ(10,*) name_sys      ! name of the system
       READ(10,*) method        ! var/dif 
       READ(10,*) geom_file     ! Geometry file .xyz
       READ(10,*) n_el          ! Number of electrons
@@ -114,6 +116,7 @@
       ! Print results 
       CALL output(N, r_N, q_tot, atom, E_ref,                         &
                   method, energy, accept, e_err, a_err)
+      CALL data_out(nruns, X, name_sys)
 
       END PROGRAM qmc
 
