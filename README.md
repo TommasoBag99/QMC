@@ -23,7 +23,7 @@ this folder.
                        average energy and acceptance rate calculation, and
                        results display.
 - `QMC_input`: Input file for configuring the computations.
-- `file.xyz`: Coordinates file for the atoms in the simulated chemical system.
+- `[file].xyz`: Coordinates file for the atoms in the simulated chemical system.
 - `Makefile`: For compiling the source code and generating the executable.
 
 
@@ -62,7 +62,7 @@ Once the folder is downloaded, follow these steps to compile and run the simulat
       
 3. **Run the Simulation:**
 
-   Ensure that the input files `QMC_input` and `file.xyz` are correctly configured with all
+   Ensure that the input files `QMC_input` and `[file].xyz` are correctly configured with all
    necessary parameters before starting the simulation.
    
    Start the simulation by running the generated executable:
@@ -80,7 +80,7 @@ calculations:
 This file contains the parameters needed to set up and control the simulation method and 
 environment. It starts by specifying the studied system and the number of electrons, followed 
 by the chosen Monte Carlo method (variational or pure diffusion). The file also details the 
-system geometry (`file.xyz)`, and various other simulation parameters such as the Jastrow factor,
+system geometry (`[file].xyz)`, and various other simulation parameters such as the Jastrow factor,
 time step, number of steps, number of walkers, reference energy, and projection time. Note that
 the last two parameters are specific to the pure diffusion method.
 
@@ -100,13 +100,13 @@ h3.xyz    ! Geometry file
 100       ! Projection time  !! ONLY FOR PURE DIFFUSION
 ```
 
-### file.xyz
+### [file].xyz
 
 This file defines the positions of the atoms in the chemical system being simulated, with
 each coordinate given in Angstroms. Each line after the first specifies an atom type followed
 by its x, y, and z coordinates in space.
 
-**Example of `file.xyz`:**
+**Example of `[file].xyz`:**
 ```bash
 3 # number of atoms
 
@@ -163,7 +163,7 @@ verification of the Quantum Monte Carlo calculations.
 
 ### Output File
 
-The simulation generates an output file named energy_name_sys.out, which contains the step 
+The simulation generates an output file named `energy_[name_sys].out`, which contains the step 
 number and the corresponding Quantum Monte Carlo energy calculated at each step. Here is an 
 example of what the content might look like:
 ```bash
