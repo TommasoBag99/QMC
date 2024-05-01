@@ -78,16 +78,18 @@ calculations:
 ### QMC_input
 
 This file contains the parameters needed to set up and control the simulation method and 
-environment. It specifies the Monte Carlo method (variational or diffusion), the system 
-geometry (`file.xyz`), the number of electrons, and various simulation parameters such as
-the Jastrow factor, time step, number of steps, number of walkers, reference energy, and 
-projection time (the last two are specific to the Pure Diffusion method).
+environment. It starts by specifying the studied system and the number of electrons, followed 
+by the chosen Monte Carlo method (variational or pure diffusion). The file also details the 
+system geometry (`file.xyz)`, and various other simulation parameters such as the Jastrow factor,
+time step, number of steps, number of walkers, reference energy, and projection time. Note that
+the last two parameters are specific to the pure diffusion method.
 
 **Example of `QMC_input`:**
 ```bash
+H3+       ! Name of the studied system
+2         ! Number of electrons  
 dif       ! Method var/dif     
 h3.xyz    ! Geometry file        
-2         ! Number of electrons  
 1.2       ! Jastrow factor (a)
 
 0.05      ! Time step            
