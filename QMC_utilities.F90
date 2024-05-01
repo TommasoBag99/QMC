@@ -117,3 +117,32 @@
 4000  FORMAT(A,1X,F9.6,21X,A)
 
       END SUBROUTINE OUTPUT
+
+!======================================================================
+      SUBROUTINE data_out(nruns, X, name_sys)
+!======================================================================
+!     Generates an output file named based on 'name_sys' that records
+!     each run's step number and corresponding energy value. The file's
+!     naming is prefixed with 'energy_' and suffixed with '.out'.
+!======================================================================
+
+      IMPLICIT NONE
+
+      INTEGER                      :: i
+      INTEGER, INTENT(IN)          :: nruns
+
+      CHARACTER*4                  :: name_sys
+
+      DOUBLE PRECISION, INTENT(IN) :: X(nruns)
+
+      OPEN (30, FILE = "energy_"//trim(name_sys)//".out")
+
+      DO i = 1, nruns
+         WRITE(30,1000) i, X(i)
+      END DO
+
+      CLOSE (30)
+
+1000  FORMAT(I4,1X,F9.6)
+
+      END SUBROUTINE data_out
