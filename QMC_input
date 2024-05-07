@@ -6,7 +6,7 @@ h3.xyz    ! Geometry file
 
 0.1       ! Time step            
 100000    ! Number of steps
-30        ! Number of walkers
+50        ! Number of walkers
 
 -1.342    ! Reference energy !! ONLY FOR PURE DIFFUSION
 100       ! Projection time  !! ONLY FOR PURE DIFFUSION
