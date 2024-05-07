@@ -1,39 +1,40 @@
 !======================================================================
-      SUBROUTINE random_gauss(z,n)
+      SUBROUTINE random_gauss(z,n,m)
 !======================================================================
 !     This subroutine is intended for generating random positions in a
 !     Gaussian distribution, used to model the spatial distribution of 
 !     electrons.      
 !======================================================================
-      
+
       IMPLICIT NONE
-      
-      INTEGER                       :: i
-      INTEGER, INTENT(IN)           :: n
-      
-      DOUBLE PRECISION, INTENT(OUT) :: z(n)
+
+      INTEGER                       :: i, k
+      INTEGER, INTENT(IN)           :: n, m
+
+      DOUBLE PRECISION, INTENT(OUT) :: z(m,n)
       DOUBLE PRECISION              :: u(n+1)
       DOUBLE PRECISION, PARAMETER   :: two_pi = 2.d0*DACOS(-1.d0)
 
-      CALL RANDOM_NUMBER(u)
-
-      IF (IAND(n,1) == 0) THEN
-         ! n is even
-         DO i=1,n,2
-            z(i)   = DSQRT(-2.d0*DLOG(u(i)))
-            z(i+1) = z(i) * DSIN( two_pi*u(i+1) )
-            z(i)   = z(i) * DCOS( two_pi*u(i+1) )
-         END DO
-      ELSE
-         ! n is odd
-         DO i=1,n-1,2
-            z(i)   = DSQRT(-2.d0*DLOG(u(i)))
-            z(i+1) = z(i) * DSIN( two_pi*u(i+1) )
-            z(i)   = z(i) * DCOS( two_pi*u(i+1) )
-         END DO
-         z(n)   = DSQRT(-2.d0*DLOG(u(n)))
-         z(n)   = z(n) * DCOS( two_pi*u(n+1) )
-      END IF
+      DO k = 1, m
+         CALL RANDOM_NUMBER(u)
+         IF (IAND(n,1) == 0) THEN
+            ! n is even
+            DO i=1,n,2
+               z(k,i)   = DSQRT(-2.d0*DLOG(u(i)))
+               z(k,i+1) = z(k,i) * DSIN(two_pi*u(i+1))
+               z(k,i)   = z(k,i) * DCOS(two_pi*u(i+1))
+            END DO
+         ELSE
+            ! n is odd
+            DO i=1,n-1,2
+               z(k,i)   = DSQRT(-2.d0*DLOG(u(i)))
+               z(k,i+1) = z(k,i) * DSIN(two_pi*u(i+1))
+               z(k,i)   = z(k,i) * DCOS(two_pi*u(i+1))
+            END DO
+            z(k,n) = DSQRT(-2.d0*DLOG(u(n)))
+            z(k,n) = z(k,n) * DCOS(two_pi*u(n+1))
+         END IF
+      END DO
 
       END SUBROUTINE random_gauss
 
@@ -119,7 +120,7 @@
       END SUBROUTINE OUTPUT
 
 !======================================================================
-      SUBROUTINE data_out(nruns, X, name_sys)
+      SUBROUTINE data_out(nruns, X, name_sys, method)
 !======================================================================
 !     Generates an output file named based on 'name_sys' that records
 !     each run's step number and corresponding energy value. The file's
@@ -131,11 +132,15 @@
       INTEGER                      :: i
       INTEGER, INTENT(IN)          :: nruns
 
+      CHARACTER*3                  :: method
       CHARACTER*4                  :: name_sys
+      CHARACTER*7                  :: pre = "energy_"
+      CHARACTER*1                  :: und = "_"
+      CHARACTER*4                  :: suf = ".out"
 
       DOUBLE PRECISION, INTENT(IN) :: X(nruns)
 
-      OPEN (30, FILE = "energy_"//trim(name_sys)//".out")
+      OPEN (30, FILE = pre//trim(name_sys)//und//trim(method)//suf)
 
       WRITE(30,1000) '#  i', 'energy'
       DO i = 1, nruns
