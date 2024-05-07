@@ -80,7 +80,7 @@ calculations:
 This file contains the parameters needed to set up and control the simulation method and 
 environment. It starts by specifying the studied system and the number of electrons, followed 
 by the chosen Monte Carlo method (variational or pure diffusion). The file also details the 
-system geometry (`[file].xyz)`, and various other simulation parameters such as the Jastrow factor,
+system geometry (`[file].xyz)`, and various other simulation parameters such as the wave function parameter,
 time step, number of steps, number of walkers, reference energy, and projection time. Note that
 the last two parameters are specific to the pure diffusion method.
 
@@ -90,11 +90,11 @@ H3+       ! Name of the studied system
 2         ! Number of electrons  
 dif       ! Method var/dif     
 h3.xyz    ! Geometry file        
-1.2       ! Jastrow factor (a)
+1.2       ! WF Parameter (a)
 
-0.05      ! Time step            
+0.1       ! Time step            
 100000    ! Number of steps
-50        ! Number of walkers
+200       ! Number of walkers
 
 -1.342    ! Reference energy !! ONLY FOR PURE DIFFUSION
 100       ! Projection time  !! ONLY FOR PURE DIFFUSION
