@@ -2,7 +2,7 @@ H3+       ! Name of the studied system
 2         ! Number of electrons  
 dif       ! Method var/dif     
 h3.xyz    ! Geometry file        
-1.2       ! Jastrow factor (a)
+1.2       ! WF Parameter (a)
 
 0.1       ! Time step            
 100000    ! Number of steps
