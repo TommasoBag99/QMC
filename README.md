@@ -163,7 +163,7 @@ verification of the Quantum Monte Carlo calculations.
 
 ### Output File
 
-The simulation generates an output file named `energy_[name_sys].out`, which contains the step 
+The simulation generates an output file named `energy_[name_sys]_[method].out`, which contains the step 
 number and the corresponding Quantum Monte Carlo energy calculated at each step. Here is an 
 example of what the content might look like:
 ```bash
