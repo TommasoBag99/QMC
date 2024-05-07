@@ -41,7 +41,7 @@
       READ(10,*) n_el          ! Number of electrons
       READ(10,*) method        ! var/dif 
       READ(10,*) geom_file     ! Geometry file .xyz
-      READ(10,*) a             ! Jastrow factor
+      READ(10,*) a             ! WF Parameter
       READ(10,*)
       READ(10,*) dt            ! Time step 
       READ(10,*) nmax          ! Number of steps
@@ -116,7 +116,7 @@
       ! Print results 
       CALL output(N, r_N, q_tot, atom, E_ref,                         &
                   method, energy, accept, e_err, a_err)
-      CALL data_out(nruns, X, name_sys)
+      CALL data_out(nruns, X, name_sys, method)
 
       END PROGRAM qmc
 
@@ -154,9 +154,7 @@
       energy  = 0.d0
       n_accep = 0_8
 
-      DO i = 1, n_el
-         CALL random_gauss(r_old(i,:),3)
-      END DO
+      CALL random_gauss(r_old,3,n_el)
 
       DO i = 1, n_el
          CALL drift(a, i, n_el, N, r_old, r_N, d_old(i,:))
@@ -169,8 +167,9 @@
       
          energy = energy + e_loc(a, n_el, N, r_old, r_N, V_NN, z)
 
+         CALL random_gauss(chi,3,n_el)
+
          DO i = 1, n_el
-            CALL random_gauss(chi(i,:),3)
             r_new(i,:) = r_old(i,:) + dt*d_old(i,:) + chi(i,:)*sq_dt
          END DO
 
@@ -249,9 +248,7 @@
       w             = 1.d0
       tau_current   = 0.d0
 
-      DO i = 1, n_el
-         CALL random_gauss(r_old(i,:),3)
-      END DO
+      CALL random_gauss(r_old,3,n_el)
 
       DO i = 1, n_el
          CALL drift(a, i, n_el, N, r_old, r_N, d_old(i,:))
@@ -276,8 +273,9 @@
             tau_current = 0.d0
          ENDIF
 
+         CALL random_gauss(chi,3,n_el)
+
          DO i = 1, n_el
-            CALL random_gauss(chi(i,:),3)
             r_new(i,:) = r_old(i,:) + dt*d_old(i,:) + chi(i,:)*sq_dt
          END DO
 
