@@ -46,9 +46,11 @@
       READ(10,*) dt            ! Time step 
       READ(10,*) nmax          ! Number of steps
       READ(10,*) nruns         ! Number of walkers
-      READ(10,*)
-      READ(10,*) E_ref         ! Reference Energy
-      READ(10,*) tau           ! Projection time
+      IF (method=="dif") THEN 
+         READ(10,*)
+         READ(10,*) E_ref         ! Reference Energy
+         READ(10,*) tau           ! Projection time
+      END IF
       
       CLOSE (10)
 
